@@ -27,22 +27,29 @@ At a basic level, a computer program is a recipe of instructions that tells your
 In a human language, __**syntax** is the rules for how a sentence is constructed__ while __**semantics** refers to the actual meaning of the statements__.
 In a programming language, __the **syntax** is the rules for how each instruction is written__ and __the **semantics** is the effects the instructions have__.  
 
+|   | Syntax | Semantic |
+|:-:|:-:|:-:|
+| Human Language | the rules for how a sentence is constructed | refers to the actual meaning of the statements |
+| Programming Language | the rules for how each instruction is written | the effects the instructions have |
+
 What's the difference between a script and a program?  
 * Scripts as programs with a short development cycle that can be created and deployed rapidly. In other words, a script is a program that is short, simple, and can be written very quickly.
 
 ### What is automation?
 Automation is the process of replacing a manual step with one that happens automatically.
 
-Instead, people can concentrate on more complex, creative, or difficult tasks
-This highlights another benefit of automation consistency.
+The benefits of autmation includes:
+* Allowing people to concentrate on more complex, creative, or difficult tasks
+* Consistency
 
-But for all of its advantages automation isn't a solution for every situation, some tasks just aren't suited for automation. For example, they may require a degree of creativity or flexibility that automatic systems can't provide or for more complicated or less frequently executed tasks creating the automation may actually be more effort or cost than it's worth.
+However, some tasks that may require a degree of creativity or flexibility that automatic systems can't provide or for more complicated or less frequently executed tasks creating the automation may actually be more effort or cost than it's worth.
 
 ### Getting Computers to Work for You
-Tasks performed by a computer that need to be done multiple times with little variation are really well suited for automation, because when you automate a task you avoid the possibility of human errors, and reduce the time it takes to do it.
+Tasks performed by a computer that need to be done multiple times with little variation are really well suited for automation.
 
-Automating tasks allows you to focus on projects that are a better use of your time, letting computers do the boring stuff for you.
-
+Automation:
+* Helps avoid the possibility of human errors
+* Reduces the time it takes to do perfrom tasks
 
 ---
 
