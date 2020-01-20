@@ -7,15 +7,15 @@ This repository is created to keep track of [Google IT Automation With Python](h
 ---
 
 ## Table of Contents
-1. [Crash Course On Python]()
-2. [Using Python to Interact with the Operating System]()
-3. [Introduction to Git and GitHub]()
-4. [Troubleshooting and Debugging Techniques]()
-5. [Configuration Management and the Cloud]()
-6. [Automating Real-World Tasks with Python]()
+1. [Crash Course On Python](https://github.com/jeremymaya/google-it-automation-with-python/tree/master/crash-course-on-python)
+2. [Using Python to Interact with the Operating System](https://github.com/jeremymaya/google-it-automation-with-python/tree/master/using-python-to-interact-with-the-operating-system)
+3. Introduction to Git and GitHub
+4. Troubleshooting and Debugging Techniques
+5. Configuration Management and the Cloud
+6. Automating Real-World Tasks with Python
 
 ---
 
 ## Credits
-[Grow With Google - A new certificate to help people grow careers in IT](https://www.blog.google/outreach-initiatives/grow-with-google/new-certificate-help-people-grow-careers/)
-[Coursera - Google IT Automation with Python Professional Certificate](https://www.coursera.org/professional-certificates/google-it-automation#courses)
+[Grow With Google - A new certificate to help people grow careers in IT](https://www.blog.google/outreach-initiatives/grow-with-google/new-certificate-help-people-grow-careers/)  
+[Coursera - Google IT Automation with Python Professional Certificate](https://www.coursera.org/professional-certificates/google-it-automation#courses)  
