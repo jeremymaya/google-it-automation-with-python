@@ -1,4 +1,4 @@
-# Coursera - Crash Course of Python - Week 1
+# Crash Course of Python - Week 1
 
 ## Learning Objectives
 * Understand what Python is
