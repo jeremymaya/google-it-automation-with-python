@@ -50,3 +50,7 @@ print(((2050/5)-32)/9)
 print(2**10)
 # Use Python to calcualte (((1 + 2) * 3) / 4)^5
 print((((1+2)*3)/4)**5)
+
+# Practice Quiz - Calculate the Golden ratio
+ratio = ((1+(5**(1/2)))/2)
+print(ratio)
