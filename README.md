@@ -1,4 +1,4 @@
-# Google It Automation With Python
+# Google IT Automation With Python
 
 *Author: Kyungeae Kim*
 
