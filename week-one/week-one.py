@@ -34,3 +34,19 @@ print(name + " is the color of " + thing)
 name = "Blue"
 thing = "Sky"
 print(name + " is the color of " + thing)
+
+# Python Can Be Your Calculator
+# Addtion = 9
+print(4+5)
+# Multiplication = 63
+print (9*7)
+# Division = -0.25
+print(-1/4)
+# Division - Repeating or periodic numbers = 0.3333333333333333
+print(1/3)
+# Order of operations (PEMDAS)
+print(((2050/5)-32)/9)
+# 2 to the power of 10
+print(2**10)
+# Use Python to calcualte (((1 + 2) * 3) / 4)^5
+print((((1+2)*3)/4)**5)
