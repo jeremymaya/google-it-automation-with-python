@@ -25,3 +25,12 @@ print("My first Python program")
 # Hello World
 # Hello, World! - Write a Python script that outputs "I'm programming in Python!"
 print("I'm programming in Python!")
+
+# Getting Information from the User - Change the values of color and thing to have the computer output a different statement than the initial one
+name = "Green"
+thing = "Hope"
+print(name + " is the color of " + thing)
+
+name = "Blue"
+thing = "Sky"
+print(name + " is the color of " + thing)
