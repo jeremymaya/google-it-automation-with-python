@@ -54,15 +54,32 @@ Automation:
 ---
 
 ## Introduction To Python
+### What is Python?
+Python is a general purpose scripting language.
+
+Benefits of using Python includes programming in Python usually feels similar to using a human language.
+
+In programming, an interpreter is the program that reads and executes code. The Python interpreter is the program that reads what is in the recipe and translates it into instructions for your computer to follow.
+
+### Why is Python Relevant to IT?
+
+### Other Languages
+There are different programming languages. Also, there are platform-specific scripting languages like PowerShell which is used on Windows, and Bash which is used on Linux. Each programming languages has its advantages and disadvantages.
 
 ---
 
 ## Hello World
-What are functions in Python?
-Functions are pieces of code that performs a unit of work
+### Hello, World!
+* Functions in Python are pieces of code that performs a unit of work
+* Kewwords in PyThon are reserved words tha are used to construct instruction
+* The print function in Python outputs messages to the screen.
+    * The print function wraps text in quotation marks indicates that the text is considered a string, which means it's text that will be manipulated by our script.
+### Getting Information from the User
+### Python Can Be Your Calculator
+### First Programming Concepts Cheat Sheet
+* [First Programming Concepts Cheat Sheet](https://www.coursera.org/learn/python-crash-course/supplement/nonTo/first-programming-concepts-cheat-sheet)
 
-What are keywords in Python?
-Kewwords are reserved words tha are used to construct instruction
+---
 
-What does the print function do in Python?
-The print function outputs messages to the screen
+## Credit
+* [Coursera - Python Crash Course Week 1](https://www.coursera.org/learn/python-crash-course/home/week/1)
