@@ -9,17 +9,6 @@
 
 ---
 
-## Course Introduction
-This course will teach the following:
-* Learn to write simple programs in Python and understand their role in automation
-* How Python interacts with the operating system
-* How to use Git and GitHub to manage versions of the code
-* Troubleshooting and debugging techniques to find and solve the root cause of problems in IT infrastructure
-* Automating at scale to deploy configuration management on a fleet of either physical or virtual machines running in the Cloud
-* Complete a final project designed to solve tasks that you might encounter in real-world IT settings
-
----
-
 ## Introduction to Programming
 ### What is programming?
 At a basic level, a computer program is a recipe of instructions that tells your computer what to do. When you write a program, you create a step by step recipe of what needs to be done to complete a task and when your computer executes the program it reads what you wrote and follows your instructions to the letter.  
@@ -28,7 +17,7 @@ In a human language, __**syntax** is the rules for how a sentence is constructed
 In a programming language, __the **syntax** is the rules for how each instruction is written__ and __the **semantics** is the effects the instructions have__.  
 
 |   | Syntax | Semantic |
-|:-:|:-:|:-:|
+|:-|:-|:-|
 | Human Language | the rules for how a sentence is constructed | refers to the actual meaning of the statements |
 | Programming Language | the rules for how each instruction is written | the effects the instructions have |
 
@@ -61,8 +50,6 @@ Benefits of using Python includes programming in Python usually feels similar to
 
 In programming, an interpreter is the program that reads and executes code. The Python interpreter is the program that reads what is in the recipe and translates it into instructions for your computer to follow.
 
-### Why is Python Relevant to IT?
-
 ### Other Languages
 There are different programming languages. Also, there are platform-specific scripting languages like PowerShell which is used on Windows, and Bash which is used on Linux. Each programming languages has its advantages and disadvantages.
 
@@ -74,8 +61,6 @@ There are different programming languages. Also, there are platform-specific scr
 * Kewwords in PyThon are reserved words tha are used to construct instruction
 * The print function in Python outputs messages to the screen.
     * The print function wraps text in quotation marks indicates that the text is considered a string, which means it's text that will be manipulated by our script.
-### Getting Information from the User
-### Python Can Be Your Calculator
 ### First Programming Concepts Cheat Sheet
 * [First Programming Concepts Cheat Sheet](https://www.coursera.org/learn/python-crash-course/supplement/nonTo/first-programming-concepts-cheat-sheet)
 

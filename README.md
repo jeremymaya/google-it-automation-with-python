@@ -16,6 +16,6 @@ This repository is created to keep track of [Google IT Automation With Python](h
 
 ---
 
-## Credits
+## Credit
 * [Grow With Google - A new certificate to help people grow careers in IT](https://www.blog.google/outreach-initiatives/grow-with-google/new-certificate-help-people-grow-careers/)  
 * [Coursera - Google IT Automation with Python Professional Certificate](https://www.coursera.org/professional-certificates/google-it-automation#courses)  
