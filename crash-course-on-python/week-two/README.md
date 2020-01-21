@@ -34,8 +34,8 @@ Below are some restrictions when naming variables in Python
 4. Python variables are case sensitive
 
 ### Expressions, Numbers, and Type Conversion
-**Implicit conversion** takes plance when the interpreter automatically converts one data type into another.
-**Explicit conversion** takes place when a function is called to convert one data type into antother
+* **Implicit conversion** takes plance when the interpreter automatically converts one data type into another.
+* **Explicit conversion** takes place when a function is called to convert one data type into antother
 
 ---
 
