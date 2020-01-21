@@ -40,6 +40,15 @@ Below are some restrictions when naming variables in Python
 ---
 
 ## Functions
+To define a function in Python,
+1. Use the **def** keyword to define a function. The name of the function is what comes after the keyword. 
+2. The parameters of the function are written between parentheses after the name.
+3. The body of the function must be to the right of the definition.
+Example:
+```Python
+def greeting(name):
+    print("Hello, " + name)
+```
 
 ---
 
