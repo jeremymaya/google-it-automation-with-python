@@ -34,12 +34,32 @@ Below are some restrictions when naming variables in Python
 4. Python variables are case sensitive
 
 ### Expressions, Numbers, and Type Conversion
-**Implicit conversion** takes plance when the interpreter automatically converts one data type into another.
-**Explicit conversion** takes place when a function is called to convert one data type into antother
+* **Implicit conversion** takes plance when the interpreter automatically converts one data type into another.
+* **Explicit conversion** takes place when a function is called to convert one data type into antother
 
 ---
 
 ## Functions
+### Defining Functions
+To define a function in Python,
+1. Use the **def** keyword to define a function. The name of the function is what comes after the keyword. 
+2. The parameters of the function are written between parentheses after the name.
+3. The body of the function must be to the right of the definition.
+Example:
+    ```Python
+    def greeting(name):
+        print("Hello, " + name)
+    ```
+
+### Reutrning Values
+The return statement allows us to:
+* Combine calls to functions
+* Perform more complex operations
+* Makes the code more reusable
+* **In Python, it can return more than one value**
+ 
+* **Double slash operator (//)** is called **floor division**. A floor division divides a number and takes the integer part of the division as the result.
+* **None** is a very special data type in Python used to indicate that things are empty or that they return nothing.
 
 ---
 
