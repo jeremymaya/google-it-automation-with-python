@@ -61,9 +61,31 @@ The return statement allows us to:
 * **Double slash operator (//)** is called **floor division**. A floor division divides a number and takes the integer part of the division as the result.
 * **None** is a very special data type in Python used to indicate that things are empty or that they return nothing.
 
+### Code Style
+A few principles in mind to create good well styled code are:
+1. Code to be self-documenting as possible
+    * Self-documenting code is written in a way that's readable and doesn't conceal its intent. 
+2. Leave a comment to add a bit of explanatory texts to the code
+    * In Python, comments are indicated by the hash character
+
 ---
 
 ## Conditionals
+### Compare Things
+Equality operators allows us to take the result of the expressions and use them to make decisions
+* a == b: a is equal to b
+* a != b: a is different than b
+* a < b: a is smaller than b
+* a <= b: a is smaller or equal to b
+* a > b: a is bigger than b
+* a >= b: a is bigger or equal to b
+
+Logical operators allow connecting multiple statements together and perform more complex comparisons
+* a and b: True if both a and b are True. False otherwise.
+* a or b: True if either a or b or both are True. False if both are False.
+* not a: True if a is False, False if a is True.
+
+**In Python uppercase letters are alphabetically sorted before lowercase letters**
 
 ---
 
