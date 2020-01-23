@@ -87,6 +87,18 @@ Logical operators allow connecting multiple statements together and perform more
 
 **In Python uppercase letters are alphabetically sorted before lowercase letters**
 
+### Branching with if Statements
+**Branching** is the ability of a program to alter its execution sequence.
+
+if block vs. defined function
+| Similarities | Differences |
+|:-|:-|
+| * The keyword, either def or if, indicates the start of a special block
+* Colon is used at the end of the first line
+* The body of the function or the if block is indented to the right | * The body of the if block will only execute when the condition evaluates to true; otherwise, it skipped |
+
+
+
 ---
 
 ## Credit

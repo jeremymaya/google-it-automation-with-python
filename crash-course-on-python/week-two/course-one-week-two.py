@@ -112,3 +112,11 @@ print(25 > 50 or 1 != 2)
 # True
 print(not 42 == "Answer")
 # True
+
+# Branching with if Statements
+"""
+The is_positive function should return True if the number received is positive, otherwise it returns None. Can you fill in the gaps to make that happen?
+"""
+def is_positive(number):
+    if number > 0:
+        return True
