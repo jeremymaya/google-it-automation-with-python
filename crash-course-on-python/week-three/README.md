@@ -14,6 +14,11 @@ While Loops instruct computer to continuously execute the code based on the valu
 
 **Initialization** is to give an initial value to a variable.
 
+### Why initializing variables matters
+When we forget to initialize the variable two different things can happen:
+1. A name error when we forget to initialize a variable 
+2. When we forget to initialize variables with the right value
+
 ---
 
 ## For Loops
