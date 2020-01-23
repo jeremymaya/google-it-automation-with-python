@@ -95,23 +95,15 @@ rectangle_area(5, 6)
 
 # Condtionals
 # Equality Operators
-print(10 > 1)
-# True
-print("cat" == "dog")
-# False
-print(1 != 2)
-# True
-# print(1 < "1")
-# TypeError
-print(1 == "1")
-# False
+print(10 > 1) # True
+print("cat" == "dog") # False
+print(1 != 2) # True
+# print(1 < "1") # TypeError
+print(1 == "1") # False
 # Logical Operators
-print("Yellow" > "Cyan" and "Brown" > "Magenta")
-# False
-print(25 > 50 or 1 != 2)
-# True
-print(not 42 == "Answer")
-# True
+print("Yellow" > "Cyan" and "Brown" > "Magenta") # False
+print(25 > 50 or 1 != 2) # True
+print(not 42 == "Answer") # True
 
 # Branching with if Statements
 """
@@ -130,3 +122,20 @@ def is_positive_two(number):
         return True
     else:
         return False
+
+
+# elif Statements
+"""
+The number_group function should return "Positive" if the number received is positive, "Negative" if it's negative, and "Zero" if it's 0. Can you fill in the gaps to make that happen?
+"""
+def number_group(number):
+    if number > 0:
+        return "Positive"
+    elif number < 0:
+        return "Negative"
+    else:
+        return "Zero"
+
+print(number_group(10)) #Should be Positive
+print(number_group(0)) #Should be Zero
+print(number_group(-5)) #Should be Negative
