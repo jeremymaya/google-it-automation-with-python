@@ -97,6 +97,10 @@ if block vs. defined function
 * Colon is used at the end of the first line
 * The body of the function or the if block is indented to the right | * The body of the if block will only execute when the condition evaluates to true; otherwise, it skipped |
 
+# else Statements
+* The **modulo operator** is represented by the percentage sign (%) and __returns the remainder of the integer division between two numbers__. 
+* **The integer division is an operation between integers that yields two results which are both integers, the quotient and the remainder.*
+* When a return statement is executed, the function exits so that the code that follows doesn't get executed.
 
 
 ---
