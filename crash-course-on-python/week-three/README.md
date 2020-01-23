@@ -19,6 +19,15 @@ When we forget to initialize the variable two different things can happen:
 1. A name error when we forget to initialize a variable 
 2. When we forget to initialize variables with the right value
 
+### Infinite loops and how to break them
+While loops:
+* Use the condition to check when to exit
+* The body of the while loop needs to make sure that the condition being checked will change
+
+An **infinite loop**, a loop that keeps executing and never stops.
+
+**Break** keyword can stop infinite loops but also to stop a loop early if the code has already achieved what's needed.
+
 ---
 
 ## For Loops
