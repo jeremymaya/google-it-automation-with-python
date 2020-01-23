@@ -78,3 +78,64 @@ def print_monthly_expense(month, hours):
 print_monthly_expense("June", 243)
 print_monthly_expense("July", 325)
 print_monthly_expense("August", 298)
+
+# Coding Style
+"""
+This function to calculate the area of a rectangle is not very readable. Can you refactor it, and then call the function to calculate the area with base of 5 and height of 6? Tip: a function that calculates the area of a rectangle should probably be called rectangle_area, and if it's receiving base and height, that's what the parameters should be called.
+"""
+def f1(x, y):
+	z = x*y  # the area is base*height
+	print("The area is " + str(z))
+
+def rectangle_area(base, height):
+    area = base*height
+    print("The area is " + str(area))
+
+rectangle_area(5, 6)
+
+# Condtionals
+# Equality Operators
+print(10 > 1) # True
+print("cat" == "dog") # False
+print(1 != 2) # True
+# print(1 < "1") # TypeError
+print(1 == "1") # False
+# Logical Operators
+print("Yellow" > "Cyan" and "Brown" > "Magenta") # False
+print(25 > 50 or 1 != 2) # True
+print(not 42 == "Answer") # True
+
+# Branching with if Statements
+"""
+The is_positive function should return True if the number received is positive, otherwise it returns None. Can you fill in the gaps to make that happen?
+"""
+def is_positive(number):
+    if number > 0:
+        return True
+
+# else Statements
+"""
+The is_positive function should return True if the number received is positive and False if it isn't. Can you fill in the gaps to make that happen?
+"""
+def is_positive_two(number):
+    if number > 0:
+        return True
+    else:
+        return False
+
+
+# elif Statements
+"""
+The number_group function should return "Positive" if the number received is positive, "Negative" if it's negative, and "Zero" if it's 0. Can you fill in the gaps to make that happen?
+"""
+def number_group(number):
+    if number > 0:
+        return "Positive"
+    elif number < 0:
+        return "Negative"
+    else:
+        return "Zero"
+
+print(number_group(10)) #Should be Positive
+print(number_group(0)) #Should be Zero
+print(number_group(-5)) #Should be Negative
