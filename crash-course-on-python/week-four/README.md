@@ -9,6 +9,10 @@
 ---
 
 ## String
+### What is a string?
+A **string** is a data type in Python that's used to represent a piece of text.
+
+Strings can be concatenated to build longer strings by using the plus sign or multiplied by a number, which multiplies the content of the string that many times.
 
 ---
 
