@@ -106,7 +106,7 @@ def guest_list(guests):
 
 guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
 
-
+# Iterating over Lists and Tuples
 """
 Complete the skip_elements function to return every other element from the list, this time using the enumerate function to check if an element is on an even position or an odd position.
 """
@@ -119,3 +119,13 @@ def skip_elements_enumerate(elements):
 
 print(skip_elements_enumerate(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
 print(skip_elements_enumerate(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+
+# List Comprehension
+"""
+Complete the skip_elements function to return every other element from the list, this time using a list comprehension to generate the new list based on the previous one, where elements in odd positions are skipped.
+"""
+def skip_elements_list_comprehension(elements):
+	return [element for element in elements if elements.index(element) % 2 == 0]  
+
+print(skip_elements_list_comprehension(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements_list_comprehension(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']

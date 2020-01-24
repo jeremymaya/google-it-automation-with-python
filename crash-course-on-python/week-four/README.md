@@ -78,6 +78,9 @@ Use **enumerate** method when iterate over lists or tuples.
 
 Using range method works BUT it's more idiomatic in Python to iterate through the elements of the list directly or using enumerate when we need the indexes.
 
+### List Comprehension
+Since creating lists based on sequences is such a common task, Python provides a technique called **list comprehension**, which allows it to be done in just one line. __List comprehensions let us create new lists based on sequences or ranges.__
+
 ---
 
 ## Dictionaries
