@@ -73,6 +73,11 @@ Examples of tuples include:
 * Store the name and email address of a person
 * Store a date and time and the general health of the system at any point in time
 
+### Iterating over Lists and Tuples
+Use **enumerate** method when iterate over lists or tuples.
+
+Using range method works BUT it's more idiomatic in Python to iterate through the elements of the list directly or using enumerate when we need the indexes.
+
 ---
 
 ## Dictionaries
