@@ -57,6 +57,10 @@ for loops are best when you want to iterate over a known sequence of elements bu
 ---
 
 ## Recursion
+### What is recursion?
+**Recursion** is the repeated application of the same procedure to a smaller problem. It tackles complex problems by reducing the problem to a simpler one by a function call itself until it reaches the **base case**.
+
+In Python, a recursive function can be called up to 1,000 times.
 
 ---
 
