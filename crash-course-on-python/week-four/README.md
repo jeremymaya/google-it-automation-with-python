@@ -53,6 +53,26 @@ In Python, strings and lists are both examples of **sequences**. There are other
 * Using plus to concatenate two sequences
 * Using in to verify if the sequence contains an element
 
+### Modifying the Contents of a List
+One of the ways that lists and strings are different is that lists are mutable. Which is another fancy word to say that they can change. This means we can add, remove, or modify elements in a list.
+* The append method adds a new element at the end of the list. 
+* The insert method inserts an element in a different position, instead of at the end, by taking an index as the first parameter and an element as the second parameter.
+* The remove method removes an element 
+* The pop method can also remove an element and receives an index
+
+### Lists and Tuples
+* **Strings** are sequences of characters and are **immutable**.
+* **Lists** are sequences of elements of any type and are **mutable**.
+* **Tuples** are sequences of elements of any type that are **immutable**.
+    * When using tuples the position of the elements inside the tuple have meaning.
+    * Tuples can be **unpacked** whichwe can turn a tuple of elements into separate variables. 
+
+Examples of tuples include:
+* When a function returns more than one value, it's returning a tuple.
+* Store a filename and it's size
+* Store the name and email address of a person
+* Store a date and time and the general health of the system at any point in time
+
 ---
 
 ## Dictionaries

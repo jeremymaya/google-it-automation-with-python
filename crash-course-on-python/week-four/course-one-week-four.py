@@ -71,3 +71,37 @@ def group_list(group, users):
 print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
 print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
 print(group_list("Users", "")) # Should be "Users:"
+
+# Modifying the Contents of a List
+"""
+The skip_elements function returns every other element from the list, starting from the first. Complete this function to do that.
+"""
+def skip_elements(elements):
+    new_elements = []
+    for element in elements:
+        if elements.index(element) % 2 == 0:
+            new_elements.append(element)
+    return new_elements
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"])) # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach'])) # Should be ['Orange', 'Strawberry', 'Peach']
+print(skip_elements([])) # Should be []
+
+# Lists and Tuples
+"""
+The guest_list function reads in a list of tuples with the name, age, and profession of each party guest, and prints the sentence "Guest is X years old and works as __." for each one. For example, guest_list(('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")) should print out:
+
+Ken is 30 years old and works as Chef.
+
+Pat is 35 years old and works as Lawyer.
+
+Amanda is 25 years old and works as Engineer.
+
+Fill in the gaps in this function to do that.
+"""
+def guest_list(guests):
+	for guest in guests:
+		name, age, job = guest
+		print("{} is {} years old and works as {}".format(name, age, job))
+
+guest_list([('Ken', 30, "Chef"), ("Pat", 35, 'Lawyer'), ('Amanda', 25, "Engineer")])
