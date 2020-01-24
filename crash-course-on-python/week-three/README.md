@@ -30,7 +30,29 @@ An **infinite loop**, a loop that keeps executing and never stops.
 
 ---
 
-## For Loops
+## for Loops
+### What is for loop?
+For loops iterate over a sequence of values. The for loop can iterate over a sequence of values of any type, not just a range of numbers.
+
+The range function, range():
+1. A range of numbers will start with the value 0 by default.
+2. The list of numbers generated will be one less than the given value
+3. The range function takes two parameters to the function instead of one to specify the first element of the list to generate
+4. The range function takes a third parameter to change the size of each step (increments)
+
+### Nested for Loops
+**Nested for loops** are two for loops, one inside the other.
+
+However, use caution when using nested for loops since the longer the list your code needs to iterate through, the longer it takes computer to complete the task. 
+
+### Common Errors
+The interpreter will refuse to iterate over a single element. This can be mitigated by:
+1. Using range()
+2. Make the loop iterate over a list with the single element
+
+Since strings are iterable, above solution may be needed. 
+
+for loops are best when you want to iterate over a known sequence of elements but when you want to operate while a certain condition is true, while loops are the best choice.
 
 ---
 
