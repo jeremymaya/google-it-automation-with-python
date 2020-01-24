@@ -7,7 +7,7 @@ def double_word(word):
     word *= 2
     count = 0
     for letter in word:
-      count += 1
+        count += 1
     return word + str(count)
 
 print(double_word("hello")) # Should return hellohello10
@@ -19,7 +19,7 @@ Modify the first_and_last function so that it returns True if the first letter o
 """
 def first_and_last(message):
     if message == "" or message[0] == message[-1]:
-      return True
+        return True
     return False
 
 print(first_and_last("else"))
@@ -53,8 +53,21 @@ print(initials("Operating system")) # Should be: OS
 Modify the student_grade function using the format method, so that it returns the phrase "X received Y% on the exam". For example, student_grade("Reed", 80) should return "Reed received 80% on the exam".
 """
 def student_grade(name, grade):
-	return "{name} received {grade}% on the exam".format(name=name, grade=grade)
+    return "{name} received {grade}% on the exam".format(name=name, grade=grade)
 
 print(student_grade("Reed", 80))
 print(student_grade("Paige", 92))
 print(student_grade("Jesse", 85))
+
+# Lists
+# What is a list?
+"""
+The group_list function accepts a group name and a list of members, and returns a string with the format: group_name: member1, member2, … For example, group_list("g", ["a","b","c"]) returns "g: a, b, c". Fill in the gaps in this function to do that.
+"""
+def group_list(group, users):
+    members = group + ": " + ", ".join(users)
+    return members
+
+print(group_list("Marketing", ["Mike", "Karen", "Jake", "Tasha"])) # Should be "Marketing: Mike, Karen, Jake, Tasha"
+print(group_list("Engineering", ["Kim", "Jay", "Tom"])) # Should be "Engineering: Kim, Jay, Tom"
+print(group_list("Users", "")) # Should be "Users:"

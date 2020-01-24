@@ -44,6 +44,14 @@ String methods
 ---
 
 ## Lists
+### What is a list?
+Square brackets are used to indicate where the list starts and ends in Python.
+
+In Python, strings and lists are both examples of **sequences**. There are other sequences too, and they all share operations like:
+* Iterating over them using for-loops
+* Indexing using the len function to know the length of the sequence
+* Using plus to concatenate two sequences
+* Using in to verify if the sequence contains an element
 
 ---
 
