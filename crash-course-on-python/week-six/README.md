@@ -89,10 +89,11 @@ def calculate_frequencies(file_contents):
     return cloud.to_array()
 ```
 
-### Visual
-![]()
+### Visual (The Sun Also Rises by Ernest Hemingway)
+![course-one-final-project](https://github.com/jeremymaya/google-it-automation-with-python/blob/master/assets/course-one-final-project.png)
 
 ---
 
 ## Credit
 * [Coursera - Python Crash Course Week 6](https://www.coursera.org/learn/python-crash-course/home/week/6)
+* [Guthenberg Project - The Sun Also Rises by Ernest Hemingway](https://gutenberg.ca/ebooks/hemingwaye-sunalsorises/hemingwaye-sunalsorises-00-h.html)
