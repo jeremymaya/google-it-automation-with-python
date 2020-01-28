@@ -28,6 +28,70 @@ Print the machine name followed by all the current users separated by commas.
     * Set provides O(n) search 
 3. Print the dictionary
 
+## Final Project
+### Problem Statement
+Create a "word cloud" from a text by procssing the text and return a dictionary that outputs the frequency of each words.
+
+### Criteria
+#### Input
+* Processing the text
+* Remove punctuation
+* Ignore case and words that do not contain all alphabets
+* Count the frequencies
+* Ignore uninteresting or irrelevant words
+
+#### Output
+A dictionary is the output of the calculate_frequencies function. The wordcloud module will then generate the image from your dictionary.
+
+### Apprach
+1. Browse and upload a text to be processed
+2. Remove puntuations and normalize the letters
+3. Create a set to store the uninteresting words
+4. Create a dictionary that uses a word as a key and frequencies of the word as a value
+5. Use WordCloud framework to generate a image of world cloud 
+
+### Code
+```Python
+def calculate_frequencies(file_contents):
+    # Here is a list of punctuations and uninteresting words you can use to process your text
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    uninteresting_words = ["the", "a", "to", "if", "is", "it", "of", "and", "or", "an", "as", "i", "me", "my", \
+    "we", "our", "ours", "you", "your", "yours", "he", "she", "him", "his", "her", "hers", "its", "they", "them", \
+    "their", "what", "which", "who", "whom", "this", "that", "am", "are", "was", "were", "be", "been", "being", \
+    "have", "has", "had", "do", "does", "did", "but", "at", "by", "with", "from", "here", "when", "where", "how", \
+    "all", "any", "both", "each", "few", "more", "some", "such", "no", "nor", "too", "very", "can", "will", "just"]
+    
+    # LEARNER CODE START HERE
+    # Removes puntuations while normalizing the letters into lower case and create a list of words
+    no_puntuations = ""
+    for char in file_contents:
+        if char not in punctuations:
+            no_puntuations += char.lower()
+    words = no_puntuations.split()
+    
+    # Iterates through the uninteresting_words to create a set of uninteresting words for faster search later
+    uninteresting_words_set = set()
+    for word in uninteresting_words:
+        if word not in uninteresting_words_set:
+            uninteresting_words_set.add(word)
+    
+    # Iterates through the words to create a dictionary of words and their frequency while excluding uninteresting words
+    words_dictionary = {}
+    for word in words:
+        if word not in words_dictionary and word not in uninteresting_words_set:
+            words_dictionary[word] = 0
+        if word in words_dictionary and word not in uninteresting_words_set:
+            words_dictionary[word] += 1
+    
+    #wordcloud
+    cloud = wordcloud.WordCloud()
+    cloud.generate_from_frequencies(words_dictionary)
+    return cloud.to_array()
+```
+
+### Visual
+![]()
+
 ---
 
 ## Credit
