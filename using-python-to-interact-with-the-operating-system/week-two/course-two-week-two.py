@@ -55,3 +55,17 @@ os.rename("using-python-to-interact-with-the-operating-system/week-two/spider_re
 
 # the OS path sub-module's exists function checks whether a file exist
 print(os.path.exists("using-python-to-interact-with-the-operating-system/week-two/spider_rename.txt"))
+
+# getsize checks a file size and returns the file size in bytes
+print(os.path.getsize("using-python-to-interact-with-the-operating-system/week-two/spider.txt"))
+
+# getmitime checks when the file was last modified and returns Unix timestamp
+print(os.path.getmtime("using-python-to-interact-with-the-operating-system/week-two/spider.txt"))
+
+# datetime module provides a function to convert the Unix timestamp
+import datetime
+timestap = os.path.getmtime("using-python-to-interact-with-the-operating-system/week-two/spider.txt")
+print(datetime.datetime.fromtimestamp(timestap))
+
+# abspath function takes a filename and turns it into an absolute path
+print(os.path.abspath("spider.txt"))
