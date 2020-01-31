@@ -40,3 +40,18 @@ print(lines)
 # "with" block pattern takes the second argument which specifies in which mode the file should be opened as
 with open("using-python-to-interact-with-the-operating-system/week-two/novel.txt", "w") as file:
     file.write("It was a dark and stormy night")
+
+# Managing Files and Directories
+# os module provides a layer of abstraction between Python and the operating system
+import os
+
+# remove function deletes a file
+os.remove("using-python-to-interact-with-the-operating-system/week-two/novel.txt")
+
+# rename function renames a file
+# The first parameter to rename function is the old name of the file and the second is new name
+os.rename("using-python-to-interact-with-the-operating-system/week-two/spider.txt", "using-python-to-interact-with-the-operating-system/week-two/spider_rename.txt")
+os.rename("using-python-to-interact-with-the-operating-system/week-two/spider_rename.txt", "using-python-to-interact-with-the-operating-system/week-two/spider.txt")
+
+# the OS path sub-module's exists function checks whether a file exist
+print(os.path.exists("using-python-to-interact-with-the-operating-system/week-two/spider_rename.txt"))
