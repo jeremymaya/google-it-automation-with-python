@@ -43,6 +43,7 @@ If the file is large, it can take a lot of computer's memory to hold it, which c
 
 ### Writing Files
 File objects can be opened in several different modes. A mode is similar to a file permission. It governs what can be done with the file.
+
 | Character | Meaning |
 |:-:|:-:|
 | r | open for reading (default) |
