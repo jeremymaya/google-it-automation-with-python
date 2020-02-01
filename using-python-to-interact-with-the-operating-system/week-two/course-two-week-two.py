@@ -69,3 +69,68 @@ print(datetime.datetime.fromtimestamp(timestap))
 
 # abspath function takes a filename and turns it into an absolute path
 print(os.path.abspath("spider.txt"))
+
+# Directories
+# getcwd function checks which current directory the Python program is executing
+print(os.getcwd())
+
+# mkdir function creates a directory
+os.mkdir("using-python-to-interact-with-the-operating-system/week-two/new_dir")
+
+# chdir function changes a directory
+os.chdir("using-python-to-interact-with-the-operating-system/week-two/new_dir")
+print(os.getcwd())
+os.chdir("..")
+print(os.getcwd())
+
+# rmdir function removes a directory
+os.rmdir(os.path.abspath("new_dir"))
+
+os.chdir("..")
+print(os.getcwd())
+# os.listdir function returns a list of all the files and sub-directories in a given directory
+print(os.listdir("week-two"))
+dir = "week-two"
+os.mkdir("week-two/another_new_dir")
+for name in os.listdir(dir):
+    # os.path.join creates the full path and it can be used to to check if the files are directory or not
+    fullname = os.path.join(dir, name)
+    if os.path.isdir(fullname):
+        print("{} is a directory".format(fullname))
+    else:
+        print("{} is a file".format(fullname))
+
+os.rmdir("week-two/another_new_dir")
+
+# Reading CSV Files
+import csv
+f = open("week-two/csv_file.txt")
+
+# parses the file using the CSV module
+csv_f = csv.reader(f)
+for row in csv_f:
+    # unpakcs the value from the CSV file
+    name, phone, role = row
+    print("Name: {}, Phone: {}, Role: {}".format(name, phone, role))
+f.close()
+
+# Reading and Writing CSV Files with Dictionaries
+# DictReader turns each row of the data in a CSV file into a dictionary
+with open ("week-two/software.csv") as software:
+    reader = csv.DictReader(software)
+    for row in reader:
+        print("{} has {} users".format(row["name"], row["users"]))
+
+# DictWriter generates a CSV file from the contents of a list of dictionaries
+users = [{"name": "Sol Mansi", "username": "solm", "department": "IT infrastructure"},
+{"name": "Lio Nelson", "username": "lion", "department": "User Experience Research"},
+{"name": "Charlie Grey", "username": "greyc", "department": "Development" }]
+
+keys = ["name", "username", "department"]
+
+with open("week-two/by_department.csv", "w") as by_department:
+    writer = csv.DictWriter(by_department, fieldnames=keys)
+    writer.writeheader()
+    writer.writerows(users)
+
+os.remove("week-two/by_department.csv")
