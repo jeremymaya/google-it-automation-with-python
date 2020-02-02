@@ -58,12 +58,21 @@ File objects can be opened in several different modes. A mode is similar to a fi
 
 ## Managing Files and Directories
 ### Working with Files
-**os module** provides a layer of abstraction between Python and the operating system which allows us to interact with the underlying system without us knowing whether we're working on a Windows, Mac, Linux, or any other operating system supported by Python. Some of the functions available from the os module are: 
+**os module** provides a layer of abstraction between Python and the operating system which allows us to interact with the underlying system without us knowing whether we're working on a Windows, Mac, Linux, or any other operating system supported by Python.
+
+Some of the functions available from the os module are: 
 * remove function deletes a file
     * Trying to remove the file that doesn't exist, the function will raise an error.
 * exists function checks whether a file exist
 * rename function changes name of a file
     * The first parameter to rename function is the old name of the file and the second is new name.
+
+### More File Informations
+* getsize checks a file size and returns the file size in bytes.
+* getmitime checks when the file was last modified and returns Unix timestamp.
+* abspath function takes a filename and turns it into an absolute path.
+
+**datetime module** provides a function to convert the Unix timestamp.
 
 ---
 
