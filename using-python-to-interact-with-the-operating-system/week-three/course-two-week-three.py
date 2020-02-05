@@ -61,3 +61,23 @@ print(re.search(r"cat|dog", "I like dogs."))
 
 # Use the findall function provided by the re module to get all possible matches
 print(re.findall(r"cat|dog", "I like both cats and dogs."))
+
+# -----------------------------------------------------------------------------------------
+
+# Repetition Qualifiers
+# Repeated matches is a common expressions that include a . followed by a *
+# It matches any character repeated as many times as possible including zero - greedy behavior
+print(re.search(r"Py.*n", "Pygmalion"))
+print(re.search(r"Py.*n", "Python Programming"))
+print(re.search(r"Py[a-z]*n", "Python Programming"))
+print(re.search(r"Py.*n", "Pyn"))
+
+# Use a +, plus character, to match one or more occurrences of the character that comes before it
+print(re.search(r"o+l+", "goldfish"))
+print(re.search(r"o+l+", "woolly"))
+print(re.search(r"o+l+", "boil"))
+
+# Use a ?, question mark symbol, for either zero or one occurrence of the character before it
+# It is used to specified optional characters
+print(re.search(r"p?each", "To each their own"))
+print(re.search(r"p?each", "I like peaches"))

@@ -55,6 +55,10 @@ grep cat$ /usr/share/dict/words
     * The re.IGNORECASE option returns a match that is case insensitive
 
 ### Wildcards and Character Classes
+A **wildcard** can match more than one character.
+* . in a regular expressions as a special character that can match any character.
+* Using a . is the broadest possible wildcard because it matches absolutely any character.
+
 Character classes are written inside square brackets, []:
 * It list the characters to match inside of the brackets
 * A range of characters can be defined using a dash
@@ -62,6 +66,13 @@ Character classes are written inside square brackets, []:
 * Use a |, pipe symbol to match either one expression or another
 
 The **search function** returns the __first matching string only__ when there are multiple matches. Use the **findall function** provided by the re module to get __all possible matches__.
+
+### Repetition Qualifiers
+Repeated matches can be searched using the expressions below:
+* Use a . followed by * to matches any character repeated as many times as possible including zero - greedy behavior.
+* Use a +, plus character, to match one or more occurrences of the character that comes before it.
+* Use a ?, question mark symbol, for either zero or one occurrence of the character before it.
+    * It is used to specified optional characters
 
 ---
 
