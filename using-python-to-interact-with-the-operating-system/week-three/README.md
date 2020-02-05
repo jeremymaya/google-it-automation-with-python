@@ -45,6 +45,13 @@ grep cat$ /usr/share/dict/words
 ---
 
 ## Basic Regular Expressions
+* The "r" at the beginning of the pattern indicates that this is a rawstring.
+    * Always use rawstrings for regular expressions in Python.
+* __None__ is a special value that Python uses that show that there's none actual value there.
+* The **match attribute** always has a value of the actual sub string that match the search pattern.
+* The **span attribute** indicates the range where the sub string can be found in the string.
+* Additional options to the search function can be added as a third parameter.
+    * The re.IGNORECASE option returns a match that is case insensitive
 
 ---
 
