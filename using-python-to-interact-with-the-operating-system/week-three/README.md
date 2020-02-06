@@ -74,6 +74,14 @@ Repeated matches can be searched using the expressions below:
 * Use a ?, question mark symbol, for either zero or one occurrence of the character before it.
     * It is used to specified optional characters
 
+### Escaping Characters
+A pattern that includes a \ could be escaping a special regex character or a special string character
+* Use a \, escape character, to match one of the special characters
+* Use a \w to match any alphanumeric character including letters, numbers, and underscores
+* Use a \d to match digits
+* Use a \s for matching whitespace characters like space, tab or new line
+* Use a \b for word boundaries
+
 ---
 
 ## Advanced Regular Expressions

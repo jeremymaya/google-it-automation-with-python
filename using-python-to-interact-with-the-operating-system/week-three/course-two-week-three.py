@@ -81,3 +81,19 @@ print(re.search(r"o+l+", "boil"))
 # It is used to specified optional characters
 print(re.search(r"p?each", "To each their own"))
 print(re.search(r"p?each", "I like peaches"))
+
+# -----------------------------------------------------------------------------------------
+
+# Escaping Characters
+# A pattern that includes a \ could be escaping a special regex character or a special string character
+# Use a \, escape character, to match one of the special characters
+print(re.search(r".com", "welcome"))
+print(re.search(r"\.com", "welcome"))
+print(re.search(r"\.com", "mydomain.com"))
+
+# Use \w to match any alphanumeric character including letters, numbers, and underscores
+# Use \d to match digits
+# Use \s for matching whitespace characters like space, tab or new line
+# Use \b for word boundaries
+print(re.search(r"\w*", "This is an example"))
+print(re.search(r"\w*", "And_this_is_another"))
