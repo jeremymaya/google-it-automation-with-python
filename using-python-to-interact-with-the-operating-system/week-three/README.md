@@ -90,7 +90,12 @@ Use parentheses to capture groups which are portions of the pattern that are enc
 * The group method returns a tuple of two elements
 * Use indexing to access these groups
 * The first element contains the text matched by the entire regular expression
-* Each successive element contains the data that was matched by every subsequent match grou. 
+* Each successive element contains the data that was matched by every subsequent match group
+
+### More on Repetition Qualifiers
+* Use {}, curly brackets and one or two numbers to specify a range with numeric repetition qualifiers.
+* Use \b, which matches word limits at the beginning and end of the pattern, to match full words.
+
 ---
 
 ## Credit

@@ -152,3 +152,16 @@ def rearrange_name_updated(name):
     return print("{} {}".format(result[2], result[1]))
 
 rearrange_name_updated("Hopper, Grace M.")
+
+# -----------------------------------------------------------------------------------------
+
+# More on Repetition Qualifiers
+# Use {}, curly brackets and one or two numbers to specify a range with numeric repetition qualifiers
+print(re.search(r"[a-zA-Z]{5}", "a ghost"))
+print(re.search(r"[a-zA-Z]{5}", "a scary ghost appeared"))
+print(re.findall(r"[a-zA-Z]{5}", "a scary ghost appeared"))
+
+# Use \b, which matches word limits at the beginning and end of the pattern, to match full words 
+print(re.findall(r"\b[a-zA-Z]{5}\b", "A scary ghost appeared"))
+print(re.findall(r"\w{5,10}", "I really like strawberries"))
+print(re.search(r"s\w{,20}", "I really like strawberries"))
