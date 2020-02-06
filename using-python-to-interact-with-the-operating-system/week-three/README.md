@@ -85,7 +85,12 @@ A pattern that includes a \ could be escaping a special regex character or a spe
 ---
 
 ## Advanced Regular Expressions
-
+### Capturing Groups
+Use parentheses to capture groups which are portions of the pattern that are enclosed in
+* The group method returns a tuple of two elements
+* Use indexing to access these groups
+* The first element contains the text matched by the entire regular expression
+* Each successive element contains the data that was matched by every subsequent match grou. 
 ---
 
 ## Credit

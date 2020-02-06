@@ -114,3 +114,41 @@ print(re.search(pattern, "this_is_a_valid_variable_name"))
 print(re.search(pattern, "this isn't a valid variable name"))
 print(re.search(pattern, "my_variable1"))
 print(re.search(pattern, "2my_variable1"))
+
+# =========================================================================================
+
+# Advanced Regular Expressions
+# Capturing Groups
+# Use parentheses to capture groups which are portions of the pattern that are enclosed in
+# Below line defines two separate groups
+result = re.search(r"^(\w*), (\w*)$", "Lovelace, Ada")
+print(result)
+
+# The group method returns a tuple of two elements
+print(result.groups())
+
+# Use indexing to access these groups
+# The first element contains the text matched by the entire regular expression
+# Each successive element contains the data that was matched by every subsequent match group
+print(result[0])
+print(result[1])
+print(result[2])
+print("{} {}".format(result[2], result[1]))
+
+def rearrange_name(name):
+    result = re.search(r"^(\w*), (\w*)$", name)
+    if result is None:
+        return print(name)
+    return print("{} {}".format(result[2], result[1]))
+
+rearrange_name("Lovelace, Ada")
+rearrange_name("Ritchie, Dennis")
+rearrange_name("Hopper, Grace M.")
+
+def rearrange_name_updated(name):
+    result = re.search(r"^([\w \.-]*), ([\w \.-]*)$", name)
+    if result is None:
+        return print(name)
+    return print("{} {}".format(result[2], result[1]))
+
+rearrange_name_updated("Hopper, Grace M.")
