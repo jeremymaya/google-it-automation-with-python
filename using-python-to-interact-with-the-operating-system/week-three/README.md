@@ -96,6 +96,13 @@ Use parentheses to capture groups which are portions of the pattern that are enc
 * Use {}, curly brackets and one or two numbers to specify a range with numeric repetition qualifiers.
 * Use \b, which matches word limits at the beginning and end of the pattern, to match full words.
 
+### Splitting and Replacing
+Split function from the re module works by taking any regular expression as a separator
+* Use capturing parentheses to split list to include the elements that is used to split the values
+
+Sub function from the re module is used for creating new strings by substituting all or part of them for a different string
+* It uses regular expressions for both the matching and the replacing
+
 ---
 
 ## Credit
