@@ -85,6 +85,23 @@ A pattern that includes a \ could be escaping a special regex character or a spe
 ---
 
 ## Advanced Regular Expressions
+### Capturing Groups
+Use parentheses to capture groups which are portions of the pattern that are enclosed in
+* The group method returns a tuple of two elements
+* Use indexing to access these groups
+* The first element contains the text matched by the entire regular expression
+* Each successive element contains the data that was matched by every subsequent match group
+
+### More on Repetition Qualifiers
+* Use {}, curly brackets and one or two numbers to specify a range with numeric repetition qualifiers.
+* Use \b, which matches word limits at the beginning and end of the pattern, to match full words.
+
+### Splitting and Replacing
+Split function from the re module works by taking any regular expression as a separator
+* Use capturing parentheses to split list to include the elements that is used to split the values
+
+Sub function from the re module is used for creating new strings by substituting all or part of them for a different string
+* It uses regular expressions for both the matching and the replacing
 
 ---
 

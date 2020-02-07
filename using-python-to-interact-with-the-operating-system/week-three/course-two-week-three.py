@@ -97,3 +97,108 @@ print(re.search(r"\.com", "mydomain.com"))
 # Use \b for word boundaries
 print(re.search(r"\w*", "This is an example"))
 print(re.search(r"\w*", "And_this_is_another"))
+
+# -----------------------------------------------------------------------------------------
+
+# Regular Expressions in Action
+# "Azerbaijan" returns "Azerbaija" because we did not specify the end 
+print(re.search(r"A.*a", "Argentina"))
+print(re.search(r"A.*a", "Azerbaijan"))
+
+# "Azerbaijan" returns None 
+print(re.search(r"^A.*a$", "Azerbaijan"))
+print(re.search(r"^A.*a$", "Australia"))
+
+pattern = r"^[a-zA-Z0-9_]*$"
+print(re.search(pattern, "this_is_a_valid_variable_name"))
+print(re.search(pattern, "this isn't a valid variable name"))
+print(re.search(pattern, "my_variable1"))
+print(re.search(pattern, "2my_variable1"))
+
+# =========================================================================================
+
+# Advanced Regular Expressions
+# Capturing Groups
+# Use parentheses to capture groups which are portions of the pattern that are enclosed in
+# Below line defines two separate groups
+result = re.search(r"^(\w*), (\w*)$", "Lovelace, Ada")
+print(result)
+
+# The group method returns a tuple of two elements
+print(result.groups())
+
+# Use indexing to access these groups
+# The first element contains the text matched by the entire regular expression
+# Each successive element contains the data that was matched by every subsequent match group
+print(result[0])
+print(result[1])
+print(result[2])
+print("{} {}".format(result[2], result[1]))
+
+def rearrange_name(name):
+    result = re.search(r"^(\w*), (\w*)$", name)
+    if result is None:
+        return print(name)
+    return print("{} {}".format(result[2], result[1]))
+
+rearrange_name("Lovelace, Ada")
+rearrange_name("Ritchie, Dennis")
+rearrange_name("Hopper, Grace M.")
+
+def rearrange_name_updated(name):
+    result = re.search(r"^([\w \.-]*), ([\w \.-]*)$", name)
+    if result is None:
+        return print(name)
+    return print("{} {}".format(result[2], result[1]))
+
+rearrange_name_updated("Hopper, Grace M.")
+
+# -----------------------------------------------------------------------------------------
+
+# More on Repetition Qualifiers
+# Use {}, curly brackets and one or two numbers to specify a range with numeric repetition qualifiers
+print(re.search(r"[a-zA-Z]{5}", "a ghost"))
+print(re.search(r"[a-zA-Z]{5}", "a scary ghost appeared"))
+print(re.findall(r"[a-zA-Z]{5}", "a scary ghost appeared"))
+
+# Use \b, which matches word limits at the beginning and end of the pattern, to match full words 
+print(re.findall(r"\b[a-zA-Z]{5}\b", "A scary ghost appeared"))
+print(re.findall(r"\w{5,10}", "I really like strawberries"))
+print(re.search(r"s\w{,20}", "I really like strawberries"))
+
+# -----------------------------------------------------------------------------------------
+
+# Extracting a PID Using regexes in Python
+log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+regex = r"\[(\d+)]"
+result = re.search(regex, log)
+print(result[1])
+
+result = re.search(regex, "A completely different string that also has numbers [34567]")
+print(result[1])
+
+# Trying to access the index 1. Therefore returs None
+# result = re.search(regex, "99 elephants in a [cage]")
+# print(result[1])
+
+def extract_pid(log_line):
+    regex = r"\[(\d+)]"
+    result = re.search(regex, log_line)
+    if result is None:
+        return ""
+    return result[1]
+
+print(extract_pid(log))
+print(extract_pid("99 elephants in a [cage]"))
+
+# -----------------------------------------------------------------------------------------
+
+# Splitting and Replacing
+# Split function from the re module works by taking any regular expression as a separator
+# Use capturing parentheses to split list to include the elements that is used to split tje values
+print(re.split(r"[.?!]", "One sentence. Another one? And the last one!"))
+print(re.split(r"([.?!])", "One sentence. Another one? And the last one!"))
+
+# Sub function from the re module is used for creating new strings by substituting all or part of them for a different string
+# It uses regular expressions for both the matching and the replacing
+print(re.sub(r"[\w.%+-]+@[\w.-]+", "[REDACTED]", "Received an email for go_nuts95@my.example.com"))
