@@ -12,6 +12,17 @@ Most operating systems supply three different I/O streams by default each with a
 * STDOUT - the standard output stream which is a pathway between a program and a target of output
 * SDTERR - the standard error stream which displays output like standard out, but is used specifically as a channel to show error messages and diagnostics from the program
 
+### Environment Variables
+A **shell** is a command line interface used to interact with your operating system. Python programs get executed inside a shell command-line environment. 
+
+The **variable set** in that environment are another source of information that can be used in scripts.
+
+**Echo** is a command that prints texts in Linux shell. In order to access the value of the variable in the shell, use a prefix and name of the variable with a dollar sign.
+```Bash
+echo $PATH
+```
+In order to access environment variables, use the **Environ dictionary** provided by the OS module.
+
 ---
 
 ## Credit
