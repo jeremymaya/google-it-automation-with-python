@@ -84,3 +84,16 @@ my_env["PATH"] = os.pathsep.join(["/opt/myapp/", my_env["PATH"]])
 result = subprocess.run(["myapp"], env=my_env)
 
 # =========================================================================================
+
+# Filtering Log Files with Regular Expressions
+import re
+
+logfile = sys.argv[1]
+with open(logfile) as f:
+    for line in f:
+        if "CRON" not in line:
+            # continue keyword tells the loop to go to the next element
+            continue
+        pattern = r"USER \((\w+)\)$"
+        result = re.search(pattern, line)
+        print(result)
