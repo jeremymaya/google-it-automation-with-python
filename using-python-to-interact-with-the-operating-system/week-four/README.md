@@ -77,6 +77,16 @@ Some of parameters that can be used with the run function includes:
 
 ---
 
+## Processing Log Files
+
+### Filtering Log Files with Regular Expressions
+The usual technique to operate on files is to:
+
+1. Call the open function which returns a file object
+2. Iterate through each of its lines using a for-loop
+
+For performance reasons, when files are large, it's generally a good practice to read them line by line instead of loading the entire contents into memory.
+
 ## Credit
 
 * [Coursera - Python Operating System Week 3](https://www.coursera.org/learn/python-operating-system/home/week/3)
