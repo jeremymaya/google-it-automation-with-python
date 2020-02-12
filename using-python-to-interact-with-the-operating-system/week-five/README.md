@@ -77,6 +77,10 @@ Taking together a group of tests of one or many kinds is commonly referred to as
 
 ## Errors and Exceptions
 
+### The Try-Except Construct
+**Try-except construct** is useful when trying to handle possible errors that could happen instead of multiple if/else statements.
+
+The code in the except block is only executed if one of the instructions in the try block raise an error of the matching type. To use a try-except block, be aware of the errors that functions that we're calling might raise.
 
 ---
 
