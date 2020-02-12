@@ -29,6 +29,12 @@ Unit test should only test the unit of code they target, the function or method 
 
 ---
 
+## Writing Unit Tests in Python
+
+Use the **unittest module** which includes classes and methods for creating unit tests to write unit tests in Python.
+
+---
+
 ## Credit
 
 * [Coursera - Python Operating System Week 5](https://www.coursera.org/learn/python-operating-system/home/week/5)
