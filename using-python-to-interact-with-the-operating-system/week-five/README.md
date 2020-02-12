@@ -47,16 +47,25 @@ Some of the edge case examples for a function that expects a number include:
 
 ### Black Box vs. White Box
 
-**White-box** testing, clear-box or transparent testing relies on the test creators knowledge of the software being tested to construct the test cases. 
+* **White-box** testing, clear-box or transparent testing relies on the test creators knowledge of the software being tested to construct the test cases. 
+    * White-box tests are helpful because a test writer can use their knowledge of the source code to create tests that cover most of the ways that the program behaves.
 
-* White-box tests are helpful because a test writer can use their knowledge of the source code to create tests that cover most of the ways that the program behaves.
 
-
-**Black-box** tests or opaque testing are written with an awareness of what the program is supposed to do, its requirements or specifications, but not how it does it.
-
-* Black-box tests are useful because they don't rely on the knowledge of how the system works. This means their test cases are less likely to be biased by the code. They usually cover situations not anticipated by the programmer who originally wrote the script.
+* **Black-box** tests or opaque testing are written with an awareness of what the program is supposed to do, its requirements or specifications, but not how it does it.
+    * Black-box tests are useful because they don't rely on the knowledge of how the system works. This means their test cases are less likely to be biased by the code. They usually cover situations not anticipated by the programmer who originally wrote the script.
 
 ### Other Test Types
+
+For different tests, separate **test environment** for test may be needed to runs a test version of our software that we're trying to verify.
+
+* **Integration tests** take the individual modules of code that unit test verify then combine them into a group to test. It verify that the interactions between the different pieces of code in integrated environments are working as expected.
+* **Regression test** is a variant of unit tests. It is usually written as part of a debugging and troubleshooting process to verify that an issue or error has been fixed once it's been identified. Regression tests are useful part of a test suite because they ensure that the same mistake doesn't happen twice.
+* **Smoke test** sometimes called build verification test, get their name from a concept that comes from testing hardware equipment. 
+    * Smoke test for a web service would be to check if there's a service running on the corresponding port
+    * Smoke test for an automation script would be to run it manually with some basic input and check that the script finishes successfully
+* **Load tests** verify that the system behaves well when it's under significant load.
+
+ Taking together a group of tests of one or many kinds is commonly referred to as a **test suite**.
 
 ## Credit
 
