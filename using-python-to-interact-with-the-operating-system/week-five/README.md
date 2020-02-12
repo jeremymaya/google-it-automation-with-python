@@ -29,6 +29,21 @@ Unit test should only test the unit of code they target, the function or method 
 
 ---
 
+## Writing Unit Tests in Python
+
+Use the **unittest module** which includes classes and methods for creating unit tests to write unit tests in Python.
+
+---
+
+## Edge Cases
+
+Edge cases are inputs that produce unexpected results, and are found at the extreme ends of the ranges of input that programs could work with.
+
+Some of the edge case examples for a function that expects a number include: 
+* Passing zero to 
+* Negative numbers
+* Extremely large numbers
+
 ## Credit
 
 * [Coursera - Python Operating System Week 5](https://www.coursera.org/learn/python-operating-system/home/week/5)
