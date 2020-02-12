@@ -14,6 +14,12 @@ class TestRearrange(unittest.TestCase):
         testcase = "Lovelace, Ada"
         expected = "Ada Lovelace"
         self.assertEqual(rearrange_name(testcase), expected)
+    
+    # test for an edge case 
+    def test_empty(self):
+        testcase = ""
+        expected = ""
+        self.assertEqual(rearrange_name(testcase), expected)
 
 # Runs the test
 unittest.main()
