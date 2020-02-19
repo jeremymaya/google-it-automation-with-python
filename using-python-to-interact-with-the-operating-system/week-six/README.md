@@ -121,6 +121,11 @@ These are some commands that are useful to know in Linux when interacting with p
 
 ### Conditional Execution in Bash
 
+In bash scripting, the condition used is based on the exit status of commands, $?
+* In bash scripting an exit value of zero means success.
+
+**Test** is a command that evaluates the conditions received and exits with zero when they are true and with one when they're false.
+
 ---
 
 ## Advanced Bash Concepts
