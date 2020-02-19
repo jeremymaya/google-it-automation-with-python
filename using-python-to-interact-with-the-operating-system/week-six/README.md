@@ -96,6 +96,18 @@ These are some commands that are useful to know in Linux when interacting with p
 
 ## Bash Scripting
 
+### Creating Bash Scripts
+bash is the most commonly used shell on Linux. Bash is not only the interpreter that runs our commands, it's also a scripting language. We can use Bash to write simple scripts when we need to use a lot of commands
+
+ps command can list all the current running processes. The free command can show you the amount of free memory. The uptime command can tell you how long the computer has been on and so on. 
+
+To call this command, we're using a special notation by putting the command inside dollar sign parentheses.
+
+
+### Using Variables and Globs
+
+### Conditional Execution in Bash
+
 ---
 
 ## Advanced Bash Concepts
