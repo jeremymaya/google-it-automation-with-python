@@ -96,6 +96,36 @@ These are some commands that are useful to know in Linux when interacting with p
 
 ## Bash Scripting
 
+### Creating Bash Scripts
+
+**Bash** is the most commonly used shell on Linux. Bash is not only the interpreter that runs our commands, it's also a __scripting language__.
+
+* ps command can list all the current running processes
+* free command can show you the amount of free memory
+* uptime command can tell you how long the computer has been on
+
+### Using Variables and Globs
+
+**Environment variables** are set in the environment in which the command is executing.
+
+* = sign is used to set an environment variables
+    * There can be no spaces between the name of the variable and the equal sign, or between the equal sign and the value
+    * Any variable that you define in a script or in the command line is local to the environment where it was defined
+* $ prefix is used to access the value of a variable
+* export command to export commands from that environment
+
+**Globs** are characters that allow us to create list of files. The star and question mark are the most common globs.
+* using a \* in the command line will match all filenames that follow the format that we specify
+* using a ? sign in the command line will match exactly one character instead of any amount of characters
+    * ? can be repeated as many times as we need
+
+### Conditional Execution in Bash
+
+In bash scripting, the condition used is based on the exit status of commands, $?
+* In bash scripting an exit value of zero means success.
+
+**Test** is a command that evaluates the conditions received and exits with zero when they are true and with one when they're false.
+
 ---
 
 ## Advanced Bash Concepts
