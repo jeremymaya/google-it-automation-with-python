@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "Starting time at: $(date)"; echo
+line="-------------------------------------------------------------------"
 
-echo "UPTIME"; uptime; echo
+echo "Starting time at: $(date)"; echo $line
 
-echo "FREE"; free; echo
+echo "UPTIME"; uptime; echo $line
 
-echo "WHO"; who; echo
+echo "FREE"; free; echo $line
+
+echo "WHO"; who; echo $line
 
 echo "Finshing at: $(date)"
