@@ -130,6 +130,21 @@ In bash scripting, the condition used is based on the exit status of commands, $
 
 ## Advanced Bash Concepts
 
+### While Loops in Bash Scripts
+
+Below is an example while loop that runs up to 5 times
+```Bash
+n=1
+while [ $n -le 5 ]; do
+    echo "Iteration number $n"
+    ((n+=1))
+done
+```
+
+The value of a command line argument can be accessed by using the $1. In Python, we get the same information using sys.argv[1]
+
+When rerunning scripts due to some kind of failure, sleep command may needed to wait a bit before trying again.
+
 ---
 
 ## Credit
