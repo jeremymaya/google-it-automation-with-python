@@ -131,8 +131,12 @@ In bash scripting, the condition used is based on the exit status of commands, $
 ## Advanced Bash Concepts
 
 ### While Loops in Bash Scripts
+The loops in Bash starts with the **do** keyword and finishes with a **done** keyword.
 
-Below is an example while loop that runs up to 5 times
+To increment the value of the variable N, we're using a bash construct of double parentheses that lets us do arithmetic operations with our variables.
+
+Below is an example while loop that runs up to 5 times:
+
 ```Bash
 n=1
 while [ $n -le 5 ]; do
@@ -144,6 +148,29 @@ done
 The value of a command line argument can be accessed by using the $1. In Python, we get the same information using sys.argv[1]
 
 When rerunning scripts due to some kind of failure, sleep command may needed to wait a bit before trying again.
+
+### For Loops in Bash Scripts
+In Bash, we construct sequences of data by listing the elements with spaces in between. In Python, the sequences are data structures like a list or a tuple or a string.
+
+```Bash
+for fruit in peach orange apple; do
+    echo "I like $fruit!"
+done
+```
+To work with a list of file, we can use globs like star and question mark to create lists of files. These lists are separated by spaces and so we can use them in our loops to iterate over a list of files that match a criteria.
+
+* Basename command takes a filename and an extension and then returns the name without the extension.
+* Surround file variable with double-quotes to allow the command to work even if the file has spaces in its name.
+    * This is a good practice in Bash scripts when dealing with file names or any variables that could include spaces.
+* It is also good idea to first run the script without actually modifying the file system to catch any possible bugs that the script might have.
+    * Add an echo in front of the MV command
+
+### Choosing Between Bash and Python
+Use Bash when we're operating with files and system commands, as long as what we're doing is simple enough that the script is self-explanatory.
+
+Avoid using Bash as it becomes hard to understand what the script is doing. It's better to write it in a more general scripting language like Python.
+
+Also Bash scripts aren't as flexible or robust as Python and some commands might not be present on certain operating system.
 
 ---
 
