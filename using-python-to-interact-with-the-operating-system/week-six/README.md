@@ -165,6 +165,13 @@ To work with a list of file, we can use globs like star and question mark to cre
 * It is also good idea to first run the script without actually modifying the file system to catch any possible bugs that the script might have.
     * Add an echo in front of the MV command
 
+### Choosing Between Bash and Python
+Use Bash when we're operating with files and system commands, as long as what we're doing is simple enough that the script is self-explanatory.
+
+Avoid using Bash as it becomes hard to understand what the script is doing. It's better to write it in a more general scripting language like Python.
+
+Also Bash scripts aren't as flexible or robust as Python and some commands might not be present on certain operating system.
+
 ---
 
 ## Credit
