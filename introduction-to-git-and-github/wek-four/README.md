@@ -17,6 +17,15 @@ When collaborating on projects hosted on GitHub, the typical workflows is:
 
 ## Code Review
 
+**Code review** means going through someone else's code, documentation or configuration and checking that it all makes sense and follows the expected patterns.
+
+The goal of a code review is:
+
+* To improve the project by making sure that changes are high quality
+* Helps make the contents are easy to understand
+* The style is consistent with the overall project
+* Remind us about any important cases
+
 ---
 
 ## Managing Projects
