@@ -66,6 +66,12 @@ When debugging, the first step is to **read the logs**. Which logs to read, will
 * On MacOs, on top of the system logs, go through the logs stored in the library logs directory
 * On Windows, use the Event Viewer tool to go through the event logs
 
+### Finding the Root Cause
+
+Understanding the root cause is essential for performing the long-term remediation.
+
+Whenever possible, we should check our hypothesis in a __test environment__, instead of the production environment that our users are working with.
+
 ---
 
 ## Binary Searching a Problem
