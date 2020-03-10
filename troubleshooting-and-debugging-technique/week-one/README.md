@@ -43,6 +43,29 @@ Also document the debugging process for the future referece.
 
 ## Understanding the Problem
 
+### It Doesn't Work
+
+There are some common questions that we can ask a user that simply report something doesn't work:
+
+* What were you trying to do?
+* What steps did you follow?
+* What was the expected result?
+* What was the actual result?
+
+When debugging a problem, we want to consider the simplest explanations first and avoid jumping into complex or time-consuming solutions unless we really have to.
+
+After having a basic idea of what the problem is, figure out the root cause by applying a process of elimination, starting with the simplest explanations first and testing those until you can isolate the root cause.
+
+### Creating a Reproduction Case
+
+A **reproduction case** is a way to verify if the problem is present or not. When trying to create a reproduction case, we want to find the actions that reproduce the issue, and we want these to be as simple as possible. The smaller the change in the environment and the shorter the list of steps to follow, the better.
+
+When debugging, the first step is to **read the logs**. Which logs to read, will depend on the operating system and the application that you're trying to debug.
+
+* On Linux, read system logs like /var/log/syslog and user-specific logs like the.xsession-errors file located in the user's home directory
+* On MacOs, on top of the system logs, go through the logs stored in the library logs directory
+* On Windows, use the Event Viewer tool to go through the event logs
+
 ---
 
 ## Binary Searching a Problem
