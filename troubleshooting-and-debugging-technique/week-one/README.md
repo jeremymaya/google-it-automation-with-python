@@ -72,6 +72,16 @@ Understanding the root cause is essential for performing the long-term remediati
 
 Whenever possible, we should check our hypothesis in a __test environment__, instead of the production environment that our users are working with.
 
+### Dealing with Intermitent Issues
+
+When dealing with intermitent issues,
+
+1. Get more involved in what's going on, so that you understand when the issue happens and when it doesn't
+    * Usually invovles going through logs or enabling debugging information
+2. Look at different sources of information, like the load on the computer, the processes running at the same time, the usage of the network, and so on
+
+If a problem goes away by turning it off and on again, there's almost certainly a bug in the software, and the bug probably has to do with not managing resources correctly.
+
 ---
 
 ## Binary Searching a Problem
