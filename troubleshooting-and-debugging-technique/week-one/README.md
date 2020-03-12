@@ -86,6 +86,14 @@ If a problem goes away by turning it off and on again, there's almost certainly 
 
 ## Binary Searching a Problem
 
+**Linear search** works but the longer the list, the longer it can take to search.
+
+If the list is **sorted**, we can use an alternative algorithm for searching called **binary search**.
+
+* It may take more time to sort an unsorted list to perform binary search
+* It can still make sense to do it if we're going to search through it several times
+* It doesn't make sense to sort the list and then use binary search to only find one element. In that case, using linear search is simpler and faster.
+
 ---
 
 ## Credit
