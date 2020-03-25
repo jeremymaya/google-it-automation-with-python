@@ -87,6 +87,13 @@ In summary,
 
 Another thing that we might want to think twice about is creating copies of the structures that we have in **memory**.
 
+### Expensive Loops
+
+When using a loop, avoid doing expensive actions inside of the loop. If an expensive operation is performed inside a loop, you multiply the time it takes to do the expensive operation by the amount of times you repeat the loop.
+
+* Make sure that the list of elements that you're iterating through is only as long as you really need it to be
+* Break out of the loop once the data is found
+
 ---
 
 ## When Slowness Problems Get Complex
