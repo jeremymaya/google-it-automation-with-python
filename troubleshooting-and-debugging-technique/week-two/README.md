@@ -51,6 +51,42 @@ Because of how profilers work, they are specific to each programming language
 * C program uses gprof to analyze
 * Python uses c-Profile module to analyze
 
+### Using the Right Data Structures
+
+Using an appropriate data structures can help us avoid unnecessary expensive operations and create efficient scripts.
+
+**Lists** are sequences of elements that can
+
+* Add, remove, or modify the elements in them
+* Iterate through the whole list to operate on each of the elements
+
+When adding or removing elements,
+
+* Adding or removing elements **at the end** is fast
+* Adding or removing elements in the middle can be slow because all the elements that follow need to be repositioned
+
+When accesing or finding an element,
+
+* Accessing an element in a specific position in the list is fast
+* Acceessing an element in an unknown position requires going through the whole list
+  * This can be super slow if the list is long
+
+**Dictionary** store key value pairs that can
+
+* Add data by associating a value to a key
+* Retrieve a value by looking up a specific key
+
+When accesing or finding an element,
+
+* Looking up keys is very fast O(n)
+
+In summary,
+
+* If you need to access elements by position or will always iterate through all the elements, use a list
+* If we need to look up the elements using a key, use a dictionary
+
+Another thing that we might want to think twice about is creating copies of the structures that we have in **memory**.
+
 ---
 
 ## When Slowness Problems Get Complex
