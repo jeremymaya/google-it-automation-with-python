@@ -98,6 +98,26 @@ When using a loop, avoid doing expensive actions inside of the loop. If an expen
 
 ## When Slowness Problems Get Complex
 
+### Parallelizing Operations
+
+Operatiing in **parallel** is one way to run scripts more efficiently.
+
+* **Concurrency** is dedicated to how we write programs that do operations in parallel
+
+When data needs to shared while using the OS to split the work and the processes, use **threads**.
+
+* These processes don't share any memory by default
+
+__Threads let us run parallel tasks inside a process__. This allows threads to share some of the memory with other threads in the same process.
+
+To handle threads, modify the code to create and handle the thread.
+
+* In Python, use the **Threading** or **AsyncIO** modules (each programming language hsa different implementations)
+
+These modules let us specify which parts of the code we want to run in separate threads or as separate asynchronous events, and how we want the results of each to be combined in the end
+
+If your script is mostly just waiting on input or output, also known as I/O bound, it might matter if it's executed on one processor or eight.
+
 ---
 
 ## Credit
