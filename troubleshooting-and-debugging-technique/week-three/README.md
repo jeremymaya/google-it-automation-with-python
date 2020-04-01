@@ -42,6 +42,82 @@ When a webpage on a Web server isn't working,
 
 ## Code that Crashes
 
+### Accessing Invalid Memory
+
+One common reason a program crashes is it's trying to access invalid memory. Accessing invalid memory means that the process tried to access a portion of the system's memory that wasn't assigned to it.
+
+In low-level languages like C or C++, the variables that store memory addresses are called pointers and the programmer needs to take care of requesting the memory that the program is going to use and then giving that memory back once it's not needed anymore.
+
+When a program tries to read or write to a memory address outside of the valid range, OS will raise an error like **segmentation fault** or **general protection fault**.
+
+Common programming errors that lead to segmentation faults or segfaults include,
+
+* Forgetting to initialize a variable
+* Trying to access a list element outside of the valid range
+* Trying to use a portion of memory after having given it back
+* Trying to write more data than the requested portion of memory can hold
+
+The **debugger** can give you a lot more detail on what the application is doing and why the memories invalid. For this to be possible, we'll need our program to be compiled with debugging symbols. This means that on top of the information that the computer uses to execute the program, the executable binary needs to include extra information needed for debugging, like the names of the variables and functions being used.
+
+Linux distributions like Debian or Ubuntu ships separate packages with the debugging symbols for all the packages in the distribution. Microsoft compilers can also generate debugging symbols in a separate PDB file.
+
+**Valgrind** can help when trying to understand problems related to handling invalid memory. Valgrind is a very powerful tool that can tell us if the code is doing any invalid operations no matter if it crashes are not. Valgrind lets us know if the code is accessing variables before initializing them.
+
+Valgrind is available on Linux and Mac OS, and Dr. Memory is a similar tool that can be used on both Windows and Linux.
+
+### Unhandled Errors and Exceptions
+
+When a program comes across an unexpected condition that isn't correctly handled in the code, it will trigger errors or exceptions.
+
+In Python, following errors could occurs,
+
+* Index error if we tried to access an element after the end of a list
+* Type error or an attribute error if we try to take an action on a variable that wasn't properly initialized
+* Division by zero error if we tried to divide by zero
+
+When these failures happen, the interpreter that's running the program will print the following:
+
+* Type of error
+* Line that caused the failure
+* **Traceback** which shows the lines of the different functions that were being executed when the problem happened
+
+To find out where things are going wrong, we use **debugging tools** available for the application's language
+
+For a Python, program we can use the **BDB interactive debugger** which lets us do all the typical debugging actions like executing lines of code one-by-one or looking at how the variables change values.
+
+When we're trying to understand what's up with a misbehaving function on top of using debuggers, it's 
+
+**print f debugging** is a common practice to trying to understand what's up with a misbehaving function on top of using debuggers. It adds statements that print data related to the codes execution to show the contents of variables, the return values of functions or metadata like the length of a list or size of a file. Taking a step further, the best approach is to add the messages in a way that can be easily enabled or disabled depending on whether we want the debug info or not.
+
+In Python, use the **logging module** which lets us set how comprehensive we want our code to be.
+
+### Fixing Someone Else's Code
+
+Writing good comments is one of those good habits that pays off when trying to understand code written by others and also your past self.
+
+Another thing that can help to understand someone else's code is reading the tests associated to the code.
+
+### Debugging a Segmentation Fault
+
+When an application crashes, it's useful to have a **core file** of the crash.
+
+**Core files** store all the information related to the crash so that we or someone else can debug what's going on. It's like taking a snapshot of the crash when it happens to analyze it later.
+
+In order to enable OS to generate core file,
+
+1. Run the ulimit command
+2. Use the -c flat for core files
+3. use the unlimited to state that we want core files of any size
+
+For the exercise show in the video, it debugs **off-by-one error** by
+
+1. Generated a core file and check the file using LS-L command
+2. Use gdb-c core to give it a core file and then example to tell it where the executable that crashed is located
+3. Use the backtrace command to look at the full backtrace of the crash
+4. Use the list command that shows the lines around the current one to get more contexts for the code that failed
+5. Print the contents of the first element argv 0, and then the second element argv 1
+    * Zero is never a valid pointer
+
 ## Handling Bigger Incidents
 
 ---
