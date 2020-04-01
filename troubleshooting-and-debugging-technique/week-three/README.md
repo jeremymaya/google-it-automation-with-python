@@ -120,6 +120,43 @@ For the exercise show in the video, it debugs **off-by-one error** by
 
 ## Handling Bigger Incidents
 
+### Crashes in Complex Systems
+
+Below is troubleshoot strategies that can be used when handling crashes in complex systems,
+
+1. Roll back
+    * It is the best strategy to use when the new changes are supsected to be causing the issue
+    * It restores the service back to health if it was the cause
+    * It helps eliminate new change as a possible cause if doing the rollback doesn't help
+2. Logs with useful information
+3. Monitoring of what the service is doing and version control for qucik roll back if needed
+4. Deploy new machines if needed
+
+### Communication and Documentation During Incidents
+
+Forgetting to dcoument could:
+
+* Risk forgetting some important details
+* Wasting a lot of valuable time when the same issue is revisited
+
+Good document should contain the following:
+
+* Root cause
+* How you diagnose the problem and found that root cause
+* What you did to fix the issue and what needs to be done to prevent the problem from happening again
+
+### Writing Effective Postmortems
+
+**Postmortems** are documents that describe details of incidence to help us learn from our mistakes. The goal of postmortems is to learn from what happened to prevent the same issue from happening again.
+
+In general postmortem should inclde include:
+
+* Details of what caused the issue
+* What the impact of the issue was
+* How it got diagnosed
+* Short-term remediation you applied
+* Long-term remediation you recommend
+
 ---
 
 ## Credit
