@@ -48,9 +48,138 @@ Managing your Infrastructure as Code it means that the fleet of nodes are **cons
 
 ## Introduction to Puppet
 
+### What is Puppet
+
+Puppet is the current industry standard for managing the configuration of computers in a fleet of machines. Puppet is:
+
+* Cross-platform
+* Open source project
+
+Puppet is typically deploy using a client-server architecture.
+
+* The client is known as the Puppet agent
+* Te service is known as the Puppet master
+
+When using this model,
+
+1. The agent connects to the master and sends a bunch of facts that describe the computer to the master
+2. The master then processes this information, generates the list of rules that need to be applied on the device
+3. The master sends this list back to the agent
+4. The agent is then in charge of making any necessary changes on the computer
+
+Below example says that the package 'sudo' should be present on every computer where the rule gets applied.
+
+```puppet
+class sudo {
+    package { 'sudo':
+        ensure => present,
+    }
+}
+```
+
+Tasks Puppet can accomplish includes
+
+* Install packages
+* Add, remove, or modify configuration files stored in the system
+* Change registry entries on Windows
+* Enable, disable, start, or stop the services
+* Configure crone jobs
+* Schedule tasks
+* Add, remove, or modify Users and Groups
+* Execute external commands
+
+### Puppet Resources
+
+**Resources** are the basic unit for modeling the configuration that we want to manage in Puppet.
+
+* Each resource specifies one configuration that we're trying to manage, like a service, a package, or a file
+
+Below example is s a simple rule that ensures that etc/sysctl.d exists and is a directory.
+
+```puppet
+class sysctl {
+    # resource type: file
+    # resource title: '/etc/sysctl.d'
+    file { '/etc/sysctl.d':
+        # resource attributes
+        ensure => directory,
+    }
+}
+```
+
+Below examples uses a file resource to configure the contents of etc/timezone, a file, which is used in some Linux distributions to determine the time zone of the computer.
+
+```puppet
+class timezone {
+    # resource type: file
+    # resource title: '/etc/timezone'
+    file { '/etc/timezone':
+        # resource attributes
+        # this will be a file instead of a directory or a symlink
+        # the contents of the file will be the UTC time zone
+        # the contents of the file will be replaced even if the file already exists
+        ensure => file,
+        content => "UTC\n",
+        replace => true,
+    }
+}
+```
+
+When we declare a resource in our puppet rules. We're defining the desired state of that resource in the system. The puppet agent then turns the desired state into reality using providers.
+
+### Puppet Classes
+
+**Classes** in Puppets are used to collect the resources that are needed to achieve a goal in a single place.
+
+Below example groups all of the resources related to NTP in the same class to make changes in the future eaiser.
+
+```puppet
+# a class with three resources related to the Network Time Protocol, or NTP
+# rules make sure that the NTP package is always upgraded to the latest version
+class ntp {
+    package { 'ntp':
+        ensure => latest,
+    }
+    # contents of the file will be based on the source attribute
+    file { '/etc/ntp.conf':
+        source => 'puppet:///modules/ntp/ntp.conf',
+        replace => true,
+    }
+    # enable and run the NTP service
+    service {
+        enable => true,
+        ensure => running,
+    }
+}
+```
+
 ---
 
 ## The Building Blocks of Configuration Management
+
+### What are domain-specific languages
+
+```puppet
+if $facts['is_virtual']{
+    package{ 'smartmontools':
+        ensure => purged,
+    }
+}
+else {
+    package{ 'smartmontools':
+        ensure => installed,
+    }
+}
+```
+
+### The Driving Principles of Configuration Management
+
+```puppet
+exec {'move example file':
+    command => 'mv /home/user/example.txt /home/user/Desktop',
+    onlyif => 'test -e /home/user/example.txt',
+}
+```
 
 ---
 
