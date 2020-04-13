@@ -28,6 +28,22 @@ Being able to **scale** means keep achieving larger impacts with the same amount
 
 Configuration management system allows a way to make changes to a system or group of systems in a **systematic**, **repeatable way**.
 
+### What is infrastructure as code
+
+**Infrastructure as Code** or IaC is the paradigm of storing all the configuration for the managed devices in version controlled files. This is then combined with automatic tooling to actually get the nodes provisioned and managed.
+
+The principals of Infrastructure as Code are commonly applied in __cloud computing environments__, where machines are treated like __interchangeable resources__, instead of individual computers.
+
+IaC allows the followings:
+
+* Makes the deployment consistent
+* Applies the benefits of the version control system to the infrastructure
+* Run automated tests on the files
+
+In a complex or large environment, treating your IT Infrastructure as Code can help you deploy a flexible scalable system. A configuration management system can help you manage that code by providing a platform to maintain and provision that infrastructure in an automated way.
+
+Managing your Infrastructure as Code it means that the fleet of nodes are **consistent, versioned, reliable, and repeatable**.
+
 ---
 
 ## Introduction to Puppet
