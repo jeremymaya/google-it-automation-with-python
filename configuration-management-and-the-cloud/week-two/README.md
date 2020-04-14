@@ -12,6 +12,25 @@ Dive deeper into baisc congfiguration management concepts and Puppet by:
 
 ## Deploying Puppet
 
+### Applying Rules Locally
+
+The **manifest** is a file with .pp extention where we'll store the rules that we want to apply.
+
+Checkout tools.pp file as an example.
+
+The **catalog** is the list of rules that are generated for one specific computer once the server has evaluated all variables, conditionals, and functions.
+
+### Managing Resource Relationships
+
+Checkout ntp.pp file as an example.
+
+### Organizing Your Puppet Modules
+
+In puppet, manifests are organized into **modules**. A module is a collection of manifests and associated data.
+
+* Manifest directory which stores manifest and init.pp where it defines a class with the same name as the created module
+* Templates directory which stores any files that stores rules to be used
+
 ---
 
 ## Deploying Puppet to Clients
