@@ -146,7 +146,7 @@ class ntp {
         replace => true,
     }
     # enable and run the NTP service
-    service {
+    service { 'ntp':
         enable => true,
         ensure => running,
     }
