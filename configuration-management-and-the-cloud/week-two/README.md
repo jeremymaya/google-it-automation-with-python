@@ -95,6 +95,16 @@ One of the reason why identity of the nodes matter is that the Puppet rules can 
 
 ### Modifying and Testing Manifests
 
+There are few ways of test changes made on Puppet
+
+1. puppet parser validate command with noop paramter
+   * Checks that the syntax of the manifests is correct
+   * noop parameter which comes from no operations makes puppet simulate what it would do without actually doing it
+2. Seperate test machines that are used only for testing out changes
+3. Automated testing via R-Spec
+
+Below example sets the facts involved different values and checks that the catalog ends up stating the expected 
+
 ```puppet
 describe 'gksu', :type => :class do
     let (:facts) { { 'is_virtual' => 'false' } }
@@ -102,6 +112,17 @@ describe 'gksu', :type => :class do
 end
 ```
 
+### Safely Rolling out Changes and Validating Them
+
+Even if you've tested the change on your computer or on a test computer and it worked just fine, __it doesn't mean that the change will work correctly on all machines running in production__.
+
+In an infrastructure context, **production** is the parts of the infrastructure where a service is executed and served to its users.
+
+In order to roll out changes safely,
+
+1. Always run them through a test environment first
+2. Push changes in in batches
+3. Make the change to be small and self-contained
 
 ---
 
