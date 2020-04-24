@@ -77,6 +77,18 @@ There are different types of Cloud services:
 
 ## Managing Instances in the Cloud
 
+There are different Cloud providers each with some specific advantages depending on what we are trying to achieve. But usually Cloud service providers implement a console to manage the services.
+
+Regardless of the service proivder, following paramaters needs to be set when creating a VM running in the Cloud
+
+* Name of the instance
+* Region and zone where the instance will be running
+* CPU, memory and boot disk options for the VM
+
+Cloud service proivders also porvides the command line interface, which allows for us to specify what we want once, and then use the same parameters many times. __Using the command line interface lets us create, modify, and even delete virtual machines from our scripts.__
+
+**Reference images** store the contents of a machine in a reusable format, while templating is the process of capturing all of the system configuration to let us create VM in a repeatable way. That exact format of the reference image will depend on the vendor. But often, the result is a file called a **disk image**. A disk image is a snapshot of a virtual machine's disk at a given point in time.
+
 ---
 
 ## Automatic Cloud Deployments
