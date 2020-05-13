@@ -13,7 +13,7 @@ This repository is created to keep track of [Google IT Automation With Python](h
 3. [Introduction to Git and GitHub](https://github.com/jeremymaya/google-it-automation-with-python/tree/master/introduction-to-git-and-github)
 4. [Troubleshooting and Debugging Techniques](https://github.com/jeremymaya/google-it-automation-with-python/tree/master/troubleshooting-and-debugging-technique)
 5. [Configuration Management and the Cloud](https://github.com/jeremymaya/google-it-automation-with-python/tree/master/configuration-management-and-the-cloud)
-6. Automating Real-World Tasks with Python
+6. [Automating Real-World Tasks with Python](https://github.com/jeremymaya/google-it-automation-with-python/tree/master/automating-real-world-tasks-with-python)
 
 ---
 
