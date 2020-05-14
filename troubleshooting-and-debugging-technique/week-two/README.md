@@ -1,20 +1,85 @@
 # Troubleshooting and Debugging Techniques - Week 2
 
+## Lerning Objectives
+
+Rundown of the different reasons that can make things run slowly by:
+
+* Looking into what causes slow scripts, slow computers, or slow systems
+* Looking into what tools are there to help identify the most common causes of slowness, and apply solutions to improve the overall performance
+
 ## Understanding Slowness
 
-The general strategy for addressing slowness is to **identify the bottleneck** for addressing slowness in  device, script, or system to run slowly.
+### Why is my computer slow
 
-Monitor the usage of resources to know which of them as being exhausted.
+The general strategy for addressing slowness is to **identify the bottleneck** for addressing slowness in  device, script, or system to run slowly. Some of the reaons could be:
 
-Top tool on Linux systems lets us see which currently running processes are using the most CPU time.
+* Running out of the CPU time
+* Time spent reading data from disk waiting for data transmitted over the network
+* Moving data from disk to RAM
 
-* There are other tools we can use like iotop and iftop
+Treat each part of the computer (CPU, memory, disk, newtwork bandwidth) as **finite resources**.
+
+Identifying the bottleneck allows us to manage the available resources more effectively. In order to find what is causing the bottleneck, **monitor** the usage of resources to know which of them are being exhausted.
+
+We can use the following commands on Linux to monitor the usage of resources:
+
+* ```top``` command on shows
+  * Which currently running processes are using the most CPU time
+  * Which currently running processes are using the most memory
+  * Other load information related to the current state of the computer such as how many processes are running and how the CPU time or memory is being used
+* ```iotop``` command shows which processes are currently using the most disk IO usage
+* ```iftop``` command shows which processes are currently using the most network bandwidth
+
+Therefore, steps to diagnose what's causing the computer to run slow would be:
+
+1. Open one of above tools to check what's going on
+2. Try to understand which resources the bottleneck and why
+3. Plan how you're going to solve the issue
+
+### How Computer Use Resources
+
+When thinking about making things faster, it's important to understand the different speeds of the parts involved when accessing data/variables:
+
+```(slowest) data from the newtok < data from disk < data from memory < data from CPU's inernal memory (fastest)```
+
+Create a **cache** when the same files are read from disk repeatedly by putting the same information directly into the process memory and avoid loading it from disk every time. A cache stores data in a form that's faster to access than its original form.
+
+Examples of caches in IT includes:
+
+* Web proxy - stores websites, images, or videos that are accessed often by users behind the proxy
+* DNS - implements a local cache for the websites they resolve so they don't need to query from the internet every time someone asks for their IP address
+
+The operating system performs **swap** when there is not enough memory - the operating system will put the parts of the memory that aren't currently in use onto the hard drive in a space called swap. Reading and writing from disk is much slower than reading and writing from RAM. So when the swapped out memory is requested by an application, it will take a while to load it back.
+
+So what do you do if you find that your machine is slow because it's spending a lot of time swapping?
+
+There are three possible reasons computer slows down due to constatnt swapping:
+
+1. There are too many open applications
+   * Solve by closing the ones that aren't needed
+2. The available memory is too small for the amount that computer is using
+   * Solve by add more RAM to the computer
+3. One of the running programs may have a **memory leak**, causing it to take all the available memory
+   * A memory leak means that memory which is no longer needed is not getting released
 
 ### Possible Causes for Slowness
 
-When you can't modify the code of the program, try to **reduce** the size of the files involved
+Below are some of the possible causes for slowness:
 
-* If the file is a log file, you can use a program like logrotate to do this for you.
+* Too many applications are configured to start on a boot and the computer slows at start up
+  * Solve by disabling applications that aren't really needed on a startup
+* Computer slows after days of running and the problem solved by a reboot - an application keeps some state while running and takes the memory
+  * Solve by modifying the code to frees up the memory after using it
+  * If it can't be fixed, fix by scheduling a restart
+* Computer slows after days of running and the problem isn't solved by a reboot - the files that an application handles grown too large
+  * Solve by modifying the code to hanlde the large file
+  * If it can't be fixed, try to **reduce** the size of the files involved - **sharding**
+* Only a subset of computer is slow
+  * Check if there is any difference in configuration
+* Computer slows due to a lot of reads and writes on the network-mounted file system
+  * Solve by creating a cache
+* Hardware failures
+* Malicious software
 
 ### Slow Web Server
 
