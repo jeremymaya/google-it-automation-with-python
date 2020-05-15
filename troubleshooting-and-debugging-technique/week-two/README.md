@@ -83,11 +83,106 @@ Below are some of the possible causes for slowness:
 
 ### Slow Web Server
 
-Use a tool called **ab** which stands for **Apache Benchmark** tool to figure out how slow the server is
+```Client complains about a web site loading slow```
 
-* Run ab -n 500 to get the average timing of 500 requests, and then pass a web address for the measurement
+First, reproduce the case and quantify the slowness with a tool called ```ab``` which stands for **Apache Benchmark** tool. ```ab``` checks if a website is behaving as expected or not by making a bunch of requests and summarize the results once it's done.
 
----
+Below command gets the average timing of 500 requests, and then pass site.example.com for the measurement:
+
+```Shell
+ab -n 500 site.example.com
+```
+
+Next, connect to the web server with ```ssh```
+
+```Shell
+ssh SERVERNAME
+```
+
+Start by looking at the output of ```top``` and see if there's possible casue.
+
+For this scenario,
+
+* ```top``` output shows that the load average is around 30
+  * The load average on Linux shows how much time the processor is busy at a given minute
+  * For a single core proccessor with any number above 1 and a dual core processor with any number 2 is being **overloaded**
+  * 30 means that there were more processes waiting for processor time than the processor had to give
+* There are multiple ```ffmpeg``` processes running which uses all of the available CPU
+  * ```ffmpeg``` program is used for video transcoding and a CPU intensive process
+
+At this point, one thing we can try is to **change the processes priorities** so that the web server takes precedence which can be done with the following commands:
+
+* ```nice``` command for starting a process with a different priority
+* ```renice``` command for changing the priority of a process that's already running
+
+Since there are multiple ffmpeg proccesses running, let's change priority of all of ```ffmpeg``` at once instead of running ```renice``` one by one with the following shell script:
+
+```Shell
+for pid in $(pidof ffmpeg); do renice 19; $pid; done
+```
+
+Above shell script:
+
+1. Iterates over the output of the ```pidof``` command with a for loop
+   * ```pidof``` command receives the process name and returns all the process IDs that have that name
+2. Calls ```renice``` for each of the process IDs
+   * ```renice``` takes the new priority which is 19, the lowest possible priority, as the first argument, and the process ID to change as the second one
+
+Check if the problem has been solved by running ```ab```. **For this scenario, the website is still slow.**
+
+Transcoding processes are CPU intensive, and running them in **parallel** is overloading the computer. So one thing we could do is, modify the program to run the transcoding one at a time instead of all at the same time.
+
+To do that, we'll need to find out how these processes got started:
+
+1. Look at the output of the ```ps``` command to get some more information about the processes
+2. Call ```ps ax``` which shows us all the running processes on the computer, and connect the output of the command to ```less``` to be able to scroll through it
+
+```Shell
+ps ax | less
+
+#search for ffmpeg from the output of ps using / which is the search key when using less
+/ffmpeg
+```
+
+Upon search, it shows that
+
+* There are multiple ffmpeg processes that are converting videos from the webm format to the mp4 format in static
+* We don't know where these videos are on the hard drive
+
+Use ```locate``` command to locate the file.
+
+```Shell
+locate static/001.webm
+
+#locate command returns the following
+/srv/deploy_videos/static/001.webm
+```
+
+When there are multiple files, use ```grep``` command to check if any of the files contain a call to a searching term - in this case ```ffmpeg``` instead of checking them one by one.
+
+```Shell
+grep ffmpeg *
+```
+
+The output of grep shows that ```deploy.sh``` script starts the ```ffmpeg``` processes in parallel using a tool called ```Daemonize``` that runs each program separately as if it were a daemon - address the issue.
+
+**However, modifying the script does NOT chnage the processes that are already running.**
+
+**Also we want to stop these processes but not cancel them completely**, as doing so would mean that the videos being converted right now will be incomplete.
+
+To avoid canceling the proccesses, use the ```killall``` command with the ```-STOP``` flag which sends a stop signal but doesn't kill the processes completely.
+
+```Shell
+killall -STOP ffmpeg
+```
+
+After stopping them all, we now want to run these processes **one at a time**. This can be done by sending the ```CONT``` signal one by one after each proccess completes the task. This can be automated with the similar for loop used earlier.
+
+```Shell
+for pid in $(pidof ffmpeg); do while kill -CONT $pid; do sleep 1; done; done;
+```
+
+Check if the problem has been solved by running ```ab```. **For this scenario, the problem is fixed at this point.**
 
 ## Slow Code
 
