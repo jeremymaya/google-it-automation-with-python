@@ -27,7 +27,7 @@ We can use the following commands on Linux to monitor the usage of resources:
   * Which currently running processes are using the most CPU time
   * Which currently running processes are using the most memory
   * Other load information related to the current state of the computer such as how many processes are running and how the CPU time or memory is being used
-* ```iotop``` command shows which processes are currently using the most disk IO usage
+* ```iotop``` command shows which processes are currently using the most disk IO usage and swap memory usage
 * ```iftop``` command shows which processes are currently using the most network bandwidth
 
 Therefore, steps to diagnose what's causing the computer to run slow would be:
